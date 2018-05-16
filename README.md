@@ -1,3 +1,28 @@
+# Android Challenge
+
+I have decided to create a barebones MVP implementation with the latest Dagger with support for AndroidInjections. With a minimal set of requirements and features, I opted to create a minimally viable product. Greater focus was put into architectural concepts over UX design.
+
+** Testing **
+- `junit` for Unit Testing
+- `mockito` for mocking objects under test
+
+** Networking **
+
+- `OkHttp` - http client
+- `Retrofit` - Wraps around OkHttp to provide Java interfaces
+- `RxJava2` - Reactive libraries and adapters for retrofit
+- `Gson` Used as type converter for Retrofit
+- `Glide` Quicker than Fresco, safer than Picasso
+
+** UI **
+
+- Standard Google Design library
+- `CardView` in `RecyclerView`
+
+Using the MVP approach, we are able to fully test the business logic and the presentation logic
+without the dependencies on Android components or the use of stubbed android.jar libraries like Robolectric.
+
+
 # The Challenge:
 
 The challenge is to create a simple Android app that exercises a REST-ful API. The API endpoint `http://api.nytimes.com/svc/movies/v2/reviews/dvd-picks.json?order=by-date&api-key=b75da00e12d54774a2d362adddcc9bef` returns a JSON object which is a list of different movie reviews published by the New York Times. For example:
@@ -24,10 +49,10 @@ Using this endpoint, show a list of these items, with each row displaying at lea
 - `display_title` (movie title)
 - `mpaa_rating` (movie rating)
 - `byline` (reviewer)
-- `headline` 
+- `headline`
 - `summary_short`
 - `publication_date`
-- `multimedia` 
+- `multimedia`
 
 Feel free to make any assumptions you want along the way or use any third party libraries as needed (just document them in a your pull request).
 
