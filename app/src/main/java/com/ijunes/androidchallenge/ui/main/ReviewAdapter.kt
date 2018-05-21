@@ -4,12 +4,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.ijunes.androidchallenge.R
+import com.ijunes.androidchallenge.data.local.dao.entity.ReviewEntity
 import com.ijunes.androidchallenge.dto.Review
 
 /**
  * Created by jkang on 5/15/18.
  */
-class ReviewAdapter(var reviews: ArrayList<Review> = ArrayList()) : RecyclerView.Adapter<ReviewItem>() {
+class ReviewAdapter(var reviews: ArrayList<ReviewEntity> = ArrayList()) : RecyclerView.Adapter<ReviewItem>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewItem {
         val viewHolder: RecyclerView.ViewHolder
@@ -26,7 +27,7 @@ class ReviewAdapter(var reviews: ArrayList<Review> = ArrayList()) : RecyclerView
         holder.setupCard(reviews.get(position))
     }
 
-    fun updateItems(newItems: List<Review>, clear: Boolean = false){
+    fun updateItems(newItems: List<ReviewEntity>, clear: Boolean = false){
         if(clear){
             reviews.clear()
         }

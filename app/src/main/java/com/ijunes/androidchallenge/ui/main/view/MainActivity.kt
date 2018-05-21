@@ -11,6 +11,7 @@ import com.ijunes.androidchallenge.ui.base.view.BaseActivity
 import com.ijunes.androidchallenge.ui.main.ReviewAdapter
 import com.ijunes.androidchallenge.ui.main.interactor.MainMVPInteractor
 import com.ijunes.androidchallenge.ui.main.presenter.MainMVPPresenter
+import com.ijunes.androidchallenge.ui.main.viewmodel.ReviewViewModel
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
@@ -19,7 +20,7 @@ import javax.inject.Inject
 /**
  * Created by jkang on 05/15/18.
  */
-class MainActivity : BaseActivity(), MainMVPView {
+class MainActivity : BaseActivity<ReviewViewModel, android.databinding.ViewDataBinding>(), MainMVPView {
 
     companion object {
         const val TAG = "MainActivity"

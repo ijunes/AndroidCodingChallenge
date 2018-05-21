@@ -1,5 +1,6 @@
 package com.ijunes.androidchallenge.dto
 import com.google.gson.annotations.SerializedName
+import com.ijunes.androidchallenge.data.local.dao.entity.ReviewEntity
 
 
 /**
@@ -11,7 +12,7 @@ data class ReviewResponse(
 		@SerializedName("copyright") val copyright: String,
 		@SerializedName("has_more") val hasMore: Boolean,
 		@SerializedName("num_results") val numResults: Int,
-		@SerializedName("results") val results: List<Review>
+		@SerializedName("results") val results: List<ReviewEntity>
 )
 
 data class Review(

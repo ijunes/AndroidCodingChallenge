@@ -18,6 +18,9 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
+    dataBinding {
+        enabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -62,8 +65,26 @@ dependencies {
     implementation group: 'com.github.bumptech.glide', name: 'glide', version:'4.7.1'
     annotationProcessor group: 'com.github.bumptech.glide', name: 'compiler', version:'4.7.1'
 
-    // Testing Libraries
-    // Unit tests
+
+    // Android Architecture
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    annotationProcessor "android.arch.persistence.room:compiler:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
+    // ViewModel and LiveData
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    implementation "android.arch.lifecycle:viewmodel:$lifecycle_version" // use -ktx for Kotlin
+    implementation "android.arch.lifecycle:livedata:$lifecycle_version"
+    implementation "android.arch.lifecycle:runtime:$lifecycle_version"
+    kapt "android.arch.lifecycle:compiler:$lifecycle_version"
+    annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
+    // alternately - if using Java8, use the following instead of compiler
+    implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
+
+    // optional - ReactiveStreams support for LiveData
+    implementation "android.arch.lifecycle:reactivestreams:$lifecycle_version"
+
+    // optional - Test helpers for LiveData
+    testImplementation "android.arch.core:core-testing:$lifecycle_version"
     testImplementation 'org.mockito:mockito-core:2.8.47'
     testImplementation 'junit:junit:4.12'
 
